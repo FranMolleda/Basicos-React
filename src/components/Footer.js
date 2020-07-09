@@ -16,9 +16,10 @@ import React from "react";
 // };
 
 //En function expresion, si no tenemos código js, sino que solo es un return podemos hacerlo de la siguiente manera:
-const Footer = () => (
+//*Esto no se puede hacer con function declaration
+const Footer = ({ fecha }) => (
   <footer>
-    <p>Todos los derechos reservados &copy; </p>
+    <p>Todos los derechos reservados &copy; {fecha}</p>
   </footer>
 );
 
