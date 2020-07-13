@@ -12,6 +12,9 @@ function App() {
     { id: 4, nombre: "Camisa Angular", precio: 20 },
   ]);
 
+  //State para carrito de Compra
+  const [carrito, setCarrito] = useState([]);
+
   //Obtener la fecha
   const fecha = new Date().getFullYear();
   return (
@@ -19,7 +22,16 @@ function App() {
       <Header titulo="Tienda Virtual" />
       <h1>Lista de productos</h1>
       {productos.map((element, id) => {
-        return <Producto productos={element} key={id} />;
+        return (
+          //Pasmos como props el carrito para manejarlo desde el componente porducto
+          <Producto
+            producto={element}
+            productos={productos}
+            key={id}
+            carrito={carrito}
+            setCarrito={setCarrito}
+          />
+        );
       })}
       <Footer fecha={fecha} />
     </Fragment>

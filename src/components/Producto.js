@@ -1,11 +1,14 @@
 import React from "react";
 
-const Producto = ({ productos }) => {
-  const { nombre, precio, id } = productos;
+const Producto = ({ producto, productos, carrito, setCarrito }) => {
+  const { nombre, precio, id } = producto;
 
   //Agregar producto al carrito
   const seleccionarProducto = (id) => {
     console.log("Comprando...", id);
+    const producto = productos.filter((producto) => producto.id === id)[0];
+    //Para agregar elementos, utilizamos el setCarrito, haciendo una copia del carrito y como segundo parametro, indicamos producto que es lo que vamos a ir agregando cada vez que pulsemos el botón
+    setCarrito([...carrito, producto]);
   };
 
   return (
