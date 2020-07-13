@@ -7,10 +7,9 @@ const Producto = ({ producto, productos, carrito, setCarrito }) => {
   const seleccionarProducto = (id) => {
     console.log("Comprando...", id);
     const producto = productos.filter((producto) => producto.id === id)[0];
-    setCarrito(carrito.push(producto));
-    console.log(producto);
+    //Para agregar elementos, utilizamos el setCarrito, haciendo una copia del carrito y como segundo parametro, indicamos producto que es lo que vamos a ir agregando cada vez que pulsemos el botón
+    setCarrito([...carrito, producto]);
   };
-  console.log(carrito);
 
   return (
     <>
