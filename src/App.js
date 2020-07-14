@@ -34,7 +34,7 @@ function App() {
           />
         );
       })}
-      <Carrito carrito={carrito} />
+      <Carrito carrito={carrito} setCarrito={setCarrito} />
       <Footer fecha={fecha} />
     </Fragment>
   );
