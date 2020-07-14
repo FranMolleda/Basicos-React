@@ -13,7 +13,6 @@ const Producto = ({ producto, productos, carrito, setCarrito }) => {
 
   return (
     <>
-      <h1>Desde producto</h1>
       <h3>El producto es: {nombre}</h3>
       <p>El Precio es: ${precio}</p>
       <button type="button" onClick={() => seleccionarProducto(id)}>
